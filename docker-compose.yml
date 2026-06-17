@@ -1,10 +1,7 @@
 # BioMCP — Docker Compose deployment
 # Single-service MCP server for biomedical literature & genomics
-version: "3.9"
-
 services:
   biomcp:
-    build: .
     image: biomcp:latest
     container_name: biomcp
 

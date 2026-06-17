@@ -22,8 +22,7 @@ EXPOSE 8080
 
 # Health check: /readyz returns 200 when server is up
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-    CMD ["/usr/local/bin/biomcp", "serve-http", "--host", "0.0.0.0", "--port", "8080"] || \
-    wget -q -O- http://localhost:8080/readyz || exit 1
+    CMD wget -q -O- http://localhost:8080/readyz || exit 1
 
 # Optional API keys for enhanced functionality:
 #   NCBI_API_KEY     - PubMed E-utilities rate boost
