@@ -49,7 +49,7 @@
   <p>One MCP server. 50+ biomedical databases. <br>Genes, variants, drugs, trials, papers, pathways — all at your AI's fingertips.</p>
   <div class="cta">
     <a href="#pricing" class="btn btn-primary">Get Started</a>
-    <a href="https://github.com/OpenBioMCP/biomcp" class="btn btn-secondary">GitHub</a>
+    <a href="https://github.com/gucci10248/JEFFREY" class="btn btn-secondary">GitHub</a>
   </div>
 </header>
 
@@ -104,15 +104,19 @@
 <section id="quickstart">
   <h2>1-Minute Setup</h2>
   <div class="quickstart">
-    <pre># Clone & run
-git clone https://github.com/OpenBioMCP/biomcp.git && cd biomcp
-bash build.sh && docker compose up -d
+    <pre># Option A: Pull from Docker Hub (recommended)
+docker pull jackgucci/biomcp:latest
+docker compose up -d
+
+# Option B: Build from source
+git clone https://github.com/gucci10248/JEFFREY.git && cd JEFFREY
+docker build -t biomcp . && docker compose up -d
 
 # Your MCP server is live
-curl http://localhost:8080/health
+curl http://localhost:8090/health
 
 # Connect Claude Desktop, Hermes, or any MCP client to:
-# http://localhost:8080/mcp</pre>
+# http://localhost:8090/mcp</pre>
   </div>
 </section>
 
@@ -129,7 +133,7 @@ curl http://localhost:8080/health
         <li>No API keys required</li>
         <li>Unlimited queries</li>
       </ul>
-      <a href="https://github.com/OpenBioMCP/biomcp" class="btn btn-secondary" style="display:block;margin-top:20px">GitHub</a>
+      <a href="https://github.com/gucci10248/JEFFREY" class="btn btn-secondary" style="display:block;margin-top:20px">GitHub</a>
     </div>
     <div class="plan featured">
       <h3>Pro</h3>
