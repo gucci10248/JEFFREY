@@ -9,14 +9,13 @@ BioMCP is a production-grade [MCP (Model Context Protocol)](https://modelcontext
 ## Quickstart
 
 ```bash
-# 1. Clone
-git clone https://github.com/OpenBioMCP/biomcp.git && cd biomcp
+# Option A: Pull from Docker Hub (recommended)
+docker pull jackgucci/biomcp:latest
+docker compose up -d
 
-# 2. (Optional) Add API keys for enhanced features
+# Option B: Build from source
+git clone https://github.com/gucci10248/JEFFREY.git && cd JEFFREY
 cp .env.example .env
-# Edit .env — add your NCBI_API_KEY (free) for faster PubMed access
-
-# 3. Build & run
 bash build.sh
 docker compose up -d
 
