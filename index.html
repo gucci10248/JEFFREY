@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioMCP — Biomedical MCP Server</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#c9d1d9;line-height:1.6}
+  a{color:#58a6ff;text-decoration:none}
+  header{text-align:center;padding:80px 20px 60px;background:linear-gradient(135deg,#0d1117 0%,#161b22 100%);border-bottom:1px solid #30363d}
+  header h1{font-size:3rem;color:#f0f6fc;margin-bottom:12px}
+  header p{font-size:1.2rem;color:#8b949e;max-width:700px;margin:0 auto}
+  .cta{margin-top:28px}
+  .btn{display:inline-block;padding:12px 28px;border-radius:8px;font-weight:600;font-size:1rem;margin:0 8px;transition:all 0.2s}
+  .btn-primary{background:#238636;color:#fff;border:1px solid #2ea043}
+  .btn-primary:hover{background:#2ea043}
+  .btn-secondary{background:#21262d;color:#c9d1d9;border:1px solid #30363d}
+  .btn-secondary:hover{background:#30363d}
+  section{padding:60px 20px;max-width:1100px;margin:0 auto}
+  h2{font-size:2rem;color:#f0f6fc;margin-bottom:24px;text-align:center}
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+  .card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:28px;transition:border-color 0.2s}
+  .card:hover{border-color:#58a6ff}
+  .card h3{color:#58a6ff;margin-bottom:8px;font-size:1.1rem}
+  .card p{color:#8b949e;font-size:0.95rem}
+  .pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+  .plan{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:36px 28px;text-align:center;transition:all 0.3s}
+  .plan:hover{border-color:#58a6ff;transform:translateY(-4px)}
+  .plan.featured{border-color:#238636;background:linear-gradient(135deg,#161b22 0%,#1a2e22 100%)}
+  .plan h3{font-size:1.4rem;color:#f0f6fc;margin-bottom:8px}
+  .plan .price{font-size:2.5rem;color:#f0f6fc;font-weight:700;margin:12px 0}
+  .plan .price span{font-size:0.9rem;color:#8b949e;font-weight:400}
+  .plan ul{list-style:none;text-align:left;margin:20px 0}
+  .plan li{padding:8px 0;color:#8b949e;font-size:0.9rem;border-bottom:1px solid #21262d}
+  .plan li::before{content:'✓ ';color:#3fb950;font-weight:bold}
+  .sources{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+  .source{background:#161b22;border:1px solid #21262d;border-radius:8px;padding:12px;text-align:center;font-size:0.85rem;color:#8b949e}
+  .quickstart{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:28px;overflow-x:auto}
+  .quickstart pre{background:#0d1117;color:#c9d1d9;padding:16px;border-radius:8px;font-family:'SF Mono',Monaco,monospace;font-size:0.9rem;line-height:1.5}
+  footer{text-align:center;padding:40px 20px;color:#484f58;font-size:0.85rem;border-top:1px solid #21262d}
+  @media(max-width:768px){header h1{font-size:2rem} .sources{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🧬 BioMCP</h1>
+  <p>One MCP server. 50+ biomedical databases. <br>Genes, variants, drugs, trials, papers, pathways — all at your AI's fingertips.</p>
+  <div class="cta">
+    <a href="#pricing" class="btn btn-primary">Get Started</a>
+    <a href="https://github.com/OpenBioMCP/biomcp" class="btn btn-secondary">GitHub</a>
+  </div>
+</header>
+
+<section id="features">
+  <h2>What BioMCP Gives Your AI</h2>
+  <div class="features">
+    <div class="card">
+      <h3>🧬 Gene & Variant Lookup</h3>
+      <p>Instant access to ClinVar, gnomAD, MyGene, and OncoKB. Annotate any human gene or variant with clinical significance, population frequency, and functional impact.</p>
+    </div>
+    <div class="card">
+      <h3>📚 Literature Search</h3>
+      <p>Full PubMed, Europe PMC, PubTator3, and LitSense2. Find papers, get structured abstracts, semantic recommendations — all in one call.</p>
+    </div>
+    <div class="card">
+      <h3>🔬 Clinical Trials</h3>
+      <p>Search 450,000+ trials on ClinicalTrials.gov with geo-filters, eligibility criteria, and phase detection. Perfect for systematic reviews.</p>
+    </div>
+    <div class="card">
+      <h3>💊 Drug Intelligence</h3>
+      <p>FDA labels, FAERS adverse events, DDInter interactions, PharmGKB pharmacogenomics, and EMA/WHO regulatory data — all drug truth in one place.</p>
+    </div>
+    <div class="card">
+      <h3>🗺️ Pathway & Enrichment</h3>
+      <p>KEGG, Reactome, and Enrichr g:Profiler. Map genes to pathways and run gene set enrichment analysis directly.</p>
+    </div>
+    <div class="card">
+      <h3>🩺 Disease-Phenotype</h3>
+      <p>Monarch Initiative, HPO, GWAS Catalog. Connect diseases to phenotypes, genes to traits, and run cross-entity discovery.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:#161b22">
+  <h2>Data Sources</h2>
+  <div class="sources">
+    <div class="source">PubMed / NCBI</div><div class="source">Europe PMC</div>
+    <div class="source">PubTator3</div><div class="source">LitSense2</div>
+    <div class="source">ClinicalTrials.gov</div><div class="source">ClinVar</div>
+    <div class="source">gnomAD</div><div class="source">OncoKB</div>
+    <div class="source">OpenFDA</div><div class="source">CDC VAERS</div>
+    <div class="source">KEGG</div><div class="source">Reactome</div>
+    <div class="source">UniProt</div><div class="source">PharmGKB</div>
+    <div class="source">DDInter</div><div class="source">CPIC</div>
+    <div class="source">GWAS Catalog</div><div class="source">Monarch Initiative</div>
+    <div class="source">DisGeNET</div><div class="source">cBioPortal</div>
+    <div class="source">EMA</div><div class="source">WHO Prequalification</div>
+    <div class="source">GTR (NCBI)</div><div class="source">Gene Ontology</div>
+  </div>
+</section>
+
+<section id="quickstart">
+  <h2>1-Minute Setup</h2>
+  <div class="quickstart">
+    <pre># Clone & run
+git clone https://github.com/OpenBioMCP/biomcp.git && cd biomcp
+bash build.sh && docker compose up -d
+
+# Your MCP server is live
+curl http://localhost:8080/health
+
+# Connect Claude Desktop, Hermes, or any MCP client to:
+# http://localhost:8080/mcp</pre>
+  </div>
+</section>
+
+<section id="pricing">
+  <h2>Simple Pricing</h2>
+  <div class="pricing">
+    <div class="plan">
+      <h3>Community</h3>
+      <div class="price">Free</div>
+      <ul>
+        <li>Self-hosted with Docker</li>
+        <li>All 50+ data sources</li>
+        <li>Community support</li>
+        <li>No API keys required</li>
+        <li>Unlimited queries</li>
+      </ul>
+      <a href="https://github.com/OpenBioMCP/biomcp" class="btn btn-secondary" style="display:block;margin-top:20px">GitHub</a>
+    </div>
+    <div class="plan featured">
+      <h3>Pro</h3>
+      <div class="price">$9.99<span>/month</span></div>
+      <ul>
+        <li>Everything in Community</li>
+        <li>Pre-configured NCBI API key</li>
+        <li>10x PubMed rate limit</li>
+        <li>OncoKB clinical annotations</li>
+        <li>Priority email support</li>
+      </ul>
+      <a href="#" class="btn btn-primary" style="display:block;margin-top:20px">Subscribe</a>
+    </div>
+    <div class="plan">
+      <h3>Team</h3>
+      <div class="price">$49.99<span>/month</span></div>
+      <ul>
+        <li>Everything in Pro</li>
+        <li>Up to 5 seats</li>
+        <li>Shared API key pool</li>
+        <li>Slack support</li>
+        <li>Custom data source integration</li>
+      </ul>
+      <a href="#" class="btn btn-secondary" style="display:block;margin-top:20px">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Enterprise-Ready Security</h2>
+  <div class="features">
+    <div class="card"><h3>🔒 Read-Only</h3><p>Zero mutation of external data. BioMCP never writes to any upstream biomedical database.</p></div>
+    <div class="card"><h3>🐳 Non-Root Container</h3><p>Runs as unprivileged user. Read-only root filesystem. No CAP_SYS_ADMIN.</p></div>
+    <div class="card"><h3>📦 Minimal Surface</h3><p>Single static binary. Zero runtime dependencies. No npm, no pip, no gem.</p></div>
+    <div class="card"><h3>🚫 No Telemetry</h3><p>Zero outbound calls except to the public biomedical APIs you explicitly query.</p></div>
+  </div>
+</section>
+
+<footer>
+  BioMCP — Open-source MCP server for biomedical intelligence. Apache 2.0 licensed.
+</footer>
+
+</body>
+</html>

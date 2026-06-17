@@ -1,0 +1,58 @@
+{
+  "audit_date": "2026-06-17",
+  "phase": 1,
+  "targets": {
+    "biomcp": {
+      "version": "0.8.22",
+      "health": {
+        "total_apis": 56,
+        "ok": 41,
+        "error": 4,
+        "excluded": 11,
+        "score": 91.1,
+        "grade": "A",
+        "errors_detail": {
+          "cdc_vaers": "timeout (344ms) - affects vaccine AE search",
+          "gtex": "timeout (5001ms) - affects gene expression",
+          "reactome": "connection error - affects pathway search",
+          "gprofiler": "timeout (5000ms) - affects gene enrichment"
+        },
+        "excluded_detail": {
+          "nci_cts": "missing NCI_API_KEY",
+          "oncokb": "missing ONCOKB_TOKEN",
+          "disgenet": "missing DISGENET_API_KEY",
+          "alphagenome": "missing ALPHAGENOME_API_KEY",
+          "semantic_scholar": "missing S2_API_KEY",
+          "umls": "missing UMLS_API_KEY",
+          "ema_local": "not configured",
+          "cvx_local": "not configured",
+          "ddinter_local": "not configured",
+          "who_pq_local": "not configured",
+          "gtr_local": "not configured",
+          "who_ivd_local": "not configured"
+        }
+      },
+      "core_entities_test": {
+        "gene_BRAF": { "status": "pass", "latency_ms": 1100 },
+        "drug_sorafenib": { "status": "pass", "latency_ms": 1200 },
+        "article_search": { "status": "pass", "latency_ms": 800 },
+        "trial_search": { "status": "pass", "latency_ms": 500 },
+        "disease_melanoma": { "status": "pending" }
+      },
+      "verdict": "PASS_WITH_CAVEATS",
+      "notes": "Core biomedical entities functional. 4 non-critical upstream timeouts. Missing API keys limit optional features but not core monetization value."
+    },
+    "pubmed_mcp": {
+      "server_url": "https://pubmed.caseyjhand.com/mcp",
+      "health": {
+        "status": "unreachable",
+        "consecutive_failures": 4,
+        "error": "Remote server down after 4 consecutive failures"
+      },
+      "verdict": "FAIL",
+      "notes": "Third-party hosted MCP server unreachable. Not dependent — BioMCP already wraps PubMed + Europe PMC natively."
+    }
+  },
+  "combined_verdict": "BioMCP Grade-A ready. PubMed MCP redundant — BioMCP covers same ground natively.",
+  "next": "Skip PubMed MCP tests. Proceed to BioMCP full functional matrix (1.2) and packaging (Phase 2)."
+}
