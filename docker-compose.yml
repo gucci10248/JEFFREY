@@ -2,7 +2,7 @@
 # Single-service MCP server for biomedical literature & genomics
 services:
   biomcp:
-    image: biomcp:latest
+    image: jackgucci/biomcp:latest
     container_name: biomcp
 
     # Security hardening
