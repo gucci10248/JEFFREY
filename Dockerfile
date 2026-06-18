@@ -17,6 +17,9 @@ RUN chmod +x /usr/local/bin/biomcp
 USER biomcp
 WORKDIR /app
 
+# MCP Registry OCI annotation (required for official registry submission)
+LABEL io.modelcontextprotocol.server.name="io.github.gucci10248/biomcp"
+
 # MCP Streamable HTTP endpoint
 EXPOSE 8080
 

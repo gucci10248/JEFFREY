@@ -95,7 +95,7 @@ DisGeNET · AlphaGenome · EMA · WHO Prequalification · NCBI GTR · cBioPortal
 | **Pro** | $9.99/mo | Pre-configured NCBI API key, priority support |
 | **Team** | $49.99/mo | 5 seats, all Pro features, shared API key pool |
 
-> [View full pricing →](https://biomcp.io/pricing)
+> Deploy locally — all features available in the open-source release.
 
 ---
 

