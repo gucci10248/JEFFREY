@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioMCP — Biomedical Knowledge at Your Fingertips</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.6;
+  }
+  .hero {
+    text-align: center;
+    padding: 100px 24px 60px;
+    background: linear-gradient(180deg, #0d1117 0%, #161b22 100%);
+  }
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #58a6ff;
+    margin-bottom: 16px;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    color: #8b949e;
+    max-width: 640px;
+    margin: 0 auto 32px;
+  }
+  .badge {
+    display: inline-flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .badge span {
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    color: #8b949e;
+  }
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+  .section h2 {
+    font-size: 1.75rem;
+    color: #f0f6fc;
+    margin-bottom: 24px;
+    border-left: 3px solid #58a6ff;
+    padding-left: 16px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .card h3 {
+    font-size: 1.1rem;
+    color: #58a6ff;
+    margin-bottom: 8px;
+  }
+  .card p { font-size: 0.9rem; color: #8b949e; }
+  code {
+    background: #21262d;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #d2a8ff;
+  }
+  .demo {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: auto;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: #c9d1d9;
+  }
+  .demo .prompt { color: #58a6ff; }
+  .demo .cmd    { color: #d2a8ff; }
+  .demo .out    { color: #7ee787; }
+  .cta {
+    text-align: center;
+    padding: 40px 24px 80px;
+  }
+  .cta a {
+    display: inline-block;
+    background: #238636;
+    color: #fff;
+    padding: 14px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .cta a:hover { background: #2ea043; }
+  .cta .sub {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: #8b949e;
+  }
+  footer {
+    text-align: center;
+    padding: 40px 24px;
+    border-top: 1px solid #21262d;
+    font-size: 0.85rem;
+    color: #484f58;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>BioMCP</h1>
+  <p>
+    One prompt to query PubMed, ClinicalTrials.gov, ClinVar, gnomAD, OncoKB,
+    KEGG, UniProt, PharmGKB, OpenFDA, GWAS Catalog, and more — across 14+
+    biomedical databases.
+  </p>
+  <div class="badge">
+    <span>PubMed</span>
+    <span>ClinicalTrials.gov</span>
+    <span>ClinVar</span>
+    <span>gnomAD</span>
+    <span>OncoKB</span>
+    <span>UniProt</span>
+    <span>KEGG</span>
+    <span>PharmGKB</span>
+    <span>OpenFDA</span>
+    <span>GWAS</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>What BioMCP Does</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Gene Lookup</h3>
+      <p>Get gene function, tissue expression, pathways, variants, and linked drugs — all in one call.</p>
+    </div>
+    <div class="card">
+      <h3>Variant Annotation</h3>
+      <p>Annotate variants like <code>BRAF V600E</code> with population frequency, pathogenicity scores, and clinical evidence.</p>
+    </div>
+    <div class="card">
+      <h3>Clinical Trials</h3>
+      <p>Search trials by condition, gene, drug, or mutation. Filter by phase, status, and location.</p>
+    </div>
+    <div class="card">
+      <h3>Drug Intelligence</h3>
+      <p>Check indications, adverse events, drug-drug interactions, and regulatory status across FDA/EMA.</p>
+    </div>
+    <div class="card">
+      <h3>Literature Synthesis</h3>
+      <p>Search PubMed across 5 backends. Auto-enrich with PubTator gene/disease annotations.</p>
+    </div>
+    <div class="card">
+      <h3>Pathway &amp; Enrichment</h3>
+      <p>Map gene sets to KEGG/Reactome pathways. Run g:Profiler enrichment analysis.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Try It</h2>
+  <div class="demo">
+    <span class="prompt">$</span> <span class="cmd">biomcp get gene BRAF</span><br>
+    <span class="out">BRAF — proto-oncogene, serine/threonine kinase<br>
+    Cytoband: 7q34. Diseases: melanoma, colorectal, NSCLC, thyroid, hairy cell leukemia<br>
+    Drugs: vemurafenib, dabrafenib, encorafenib, trametinib, cobimetinib<br>
+    Pathways: MAPK signaling, PI3K-Akt, Rap1 signaling...</span><br><br>
+    <span class="prompt">$</span> <span class="cmd">biomcp search trial -c melanoma --mutation BRAF --has-results</span><br>
+    <span class="out">3 trials found: NCT02292121 (Phase III vemurafenib+cobimetinib), ...</span>
+  </div>
+</div>
+
+<div class="cta">
+  <a href="https://smithery.ai/server/biomcp1">Install on Smithery</a>
+  <div class="sub">or find us on <a href="https://mcp.so" style="color:#58a6ff">mcp.so</a></div>
+</div>
+
+<footer>
+  BioMCP &copy; 2026 &mdash; MCP endpoint: <code>https://biomcp.io/mcp</code>
+</footer>
+
+</body>
+</html>
