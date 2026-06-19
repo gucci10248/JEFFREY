@@ -1,10 +1,14 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.gucci10248/biomcp",
-  "title": "BioMCP",
-  "description": "Read-only biomedical MCP server connecting PubMed, ClinicalTrials.gov, ClinVar, gnomAD, OncoKB, Reactome, KEGG, UniProt, PharmGKB, CPIC, OpenFDA, Monarch Initiative, GWAS Catalog, and more. One command grammar for all biomedical entities — genes, variants, diseases, drugs, trials, articles, phenotypes, pathways, proteins, diagnostics, and adverse events.",
+  "name": "biomcp",
+  "title": "BioMCP — 50+ Biomedical Databases, One Command",
+  "description": "Production-grade read-only biomedical MCP server unifying PubMed, ClinicalTrials.gov, ClinVar, gnomAD, OncoKB, Reactome, KEGG, UniProt, PharmGKB, CPIC, OpenFDA, Monarch Initiative, GWAS Catalog, and 40+ other sources into a single consistent command grammar. Covers genes, variants, diseases, drugs, trials, articles, phenotypes, pathways, proteins, diagnostics, and adverse events. One command per entity type — no learning curve.",
   "version": "0.8.22",
   "websiteUrl": "https://github.com/gucci10248/JEFFREY",
+  "iconUrl": "https://raw.githubusercontent.com/gucci10248/JEFFREY/main/assets/biomcp-icon.svg",
+  "license": "Apache-2.0",
+  "categories": ["healthcare", "science", "research"],
+  "tags": ["biomedical", "pubmed", "genomics", "clinical-trials", "pharmacology", "bioinformatics", "literature-search", "variant-annotation", "drug-discovery"],
   "packages": [
     {
       "registryType": "oci",
